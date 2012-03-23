@@ -90,7 +90,7 @@ html{
 /* !グリッドレイアウト */
 /* ////////////////////////////////////////////// */
 
-.line, .lastUnit {
+.line, .lastUnit{
 	overflow: hidden;
 	*overflow:visible;
 	*zoom:1;
