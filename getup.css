@@ -8,6 +8,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+Getup.css is inspired by OOCSS and inuit.css
+
 OOCSS http://oocss.org/
 Copyright (c) 2009, Nicole Sullivan.
 All rights reserved.
@@ -178,17 +180,16 @@ html {
 /* !グリッドレイアウト */
 /* ////////////////////////////////////////////// */
 .line,
-.lastUnit {
+.last-unit {
   overflow: hidden;
   *overflow: visible;
   *zoom: 1;
 }
-.unit,
-.keepUnit {
+.unit{
   float: left;
   _zoom: 1;
 }
-.unitRight {
+.right-unit {
   float: right;
 }
 .size1of1 {
@@ -500,7 +501,7 @@ html {
 .after9of10 {
   padding-right: 90%;
 }
-.lt-ie9 .lastUnit {
+.lt-ie9 .last-unit {
   float: none;
   _position: relative;
   _left: -3px;
@@ -1081,18 +1082,29 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   margin-left: 30px !important;
 }
 /* ////////////////////////////////////////////// */
+/* !タブレットサイズ */
+/* ////////////////////////////////////////////// */
+@media (max-width: 720px) {
+  .linearize-from-tablet > .unit {
+    clear: both;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100% !important;
+  }
+}
+
+/* ////////////////////////////////////////////// */
 /* !モバイルサイズ */
 /* ////////////////////////////////////////////// */
 @media (max-width: 480px) {
   html {
     font-size: 0.875em;
     /* Mobileではデフォルトのテキストサイズを14pxに */
-  
     -webkit-text-size-adjust: none;
     /* デバイスが横になった時の文字拡大をOFF */
-  
   }
-  .unit {
+  .linearize-from-mobile > .unit {
     clear: both;
     display: block;
     padding-left: 0;

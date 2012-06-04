@@ -1,3 +1,3 @@
 $(function(){
-	$('.line .unit:last-child').addClass('lastUnit');
+	$('.line .unit:last-child').addClass('last-unit');
 });
