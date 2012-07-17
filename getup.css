@@ -181,9 +181,14 @@ html {
 /* ////////////////////////////////////////////// */
 .line,
 .last-unit {
-  overflow: hidden;
   *overflow: visible;
   *zoom: 1;
+}
+.line:after,
+.line::after{
+  content: "";
+  display: block;
+  clear: both;
 }
 .unit{
   float: left;
@@ -826,7 +831,9 @@ ul.line {
   _zoom: 1;
 }
 .clearfix:after,
-.cf:after {
+.cf:after.
+.clearfix::after,
+.cf::after {
   content: "";
   display: block;
   clear: both;
@@ -1111,7 +1118,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     padding-right: 0;
     width: 100% !important;
   }
-  .noMobile {
+  .no-mobile {
     display: none;
   }
   /* ////////////////////////// */
@@ -1192,6 +1199,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   */
 }
 /*--- END PRINT ---*/
+
 /* //////////////////////////////////////////// */
 /* !カスタム設定 */
 /* //////////////////////////////////////////// */
