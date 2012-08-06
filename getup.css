@@ -506,7 +506,7 @@ html {
 .after9of10 {
   padding-right: 90%;
 }
-.lt-ie9 .last-unit {
+.lt-ie8 .last-unit {
   float: none;
   _position: relative;
   _left: -3px;
