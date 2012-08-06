@@ -179,10 +179,10 @@ html {
 /* ////////////////////////////////////////////// */
 /* !グリッドレイアウト */
 /* ////////////////////////////////////////////// */
-.lt-ie7 .line,
-.lt-ie7 .last-unit {
-  overflow: visible;
-  zoom: 1;
+.line,
+.last-unit {
+  _overflow: visible;
+  _zoom: 1;
 }
 .line:after,
 .line::after{
@@ -194,8 +194,8 @@ html {
 .unit{
   float: left;
 }
-.lt-ie7 .unit {
-  zoom: 1;
+.unit {
+  _zoom: 1;
 }
 .right-unit {
   float: right;
