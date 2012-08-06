@@ -179,26 +179,26 @@ html {
 /* ////////////////////////////////////////////// */
 /* !グリッドレイアウト */
 /* ////////////////////////////////////////////// */
-.line,
-.last-unit {
-  *overflow: visible;
-  *zoom: 1;
+.lt-ie7 .line,
+.lt-ie7 .last-unit {
+  overflow: visible;
+  zoom: 1;
 }
 .line:after,
 .line::after{
+  clear: both;
   content: "";
   display: block;
-  clear: both;
+  height: 0;
 }
 .unit{
   float: left;
-  _zoom: 1;
+}
+.lt-ie7 .unit {
+  zoom: 1;
 }
 .right-unit {
   float: right;
-}
-.size1of1 {
-  float: none;
 }
 .size1of2 {
   width: 50%;
@@ -834,9 +834,10 @@ ul.line {
 .cf:after.
 .clearfix::after,
 .cf::after {
+  clear: both;
   content: "";
   display: block;
-  clear: both;
+  height: 0;
 }
 /* テキスト方向
 以下のWordpressのリッチテキストエディタが付加するクラス(※)も合わせて設定
