@@ -181,8 +181,8 @@ html {
 /* ////////////////////////////////////////////// */
 .line,
 .last-unit {
-  _overflow: visible;
-  _zoom: 1;
+  /overflow: visible;
+  /zoom: 1;
 }
 .line:after,
 .line::after{
@@ -195,7 +195,7 @@ html {
   float: left;
 }
 .unit {
-  _zoom: 1;
+  /zoom: 1;
 }
 .right-unit {
   float: right;
@@ -508,9 +508,9 @@ html {
 }
 .lt-ie8 .last-unit {
   float: none;
-  _position: relative;
-  _left: -3px;
-  _margin-right: -3px;
+  /position: relative;
+  /left: -3px;
+  /margin-right: -3px;
   width: auto;
 }
 /* ///////////////////////////////////////////////// */
@@ -828,7 +828,7 @@ ul.line {
 /* !CLEARFIX */
 .clearfix,
 .cf {
-  _zoom: 1;
+  zoom: 1;
 }
 .clearfix:after,
 .cf:after.
@@ -862,12 +862,12 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 .left {
   float: left;
   margin-top: 0;
-  _display: inline;
+  /display: inline;
 }
 .right {
   float: right;
   margin-top: 0;
-  _display: inline;
+  /display: inline;
 }
 .clear {
   clear: both;
@@ -882,7 +882,7 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 }
 .ovh {
   overflow: hidden !important;
-  _zoom: 1;
+  /zoom: 1;
 }
 /* spacing helpers
 p,m = padding,margin
