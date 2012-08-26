@@ -823,33 +823,15 @@ ul.line {
   margin: 0;
   padding: 0;
 }
-ul.gnav {
-  list-style: none;
-  margin: 10px 0;
-  padding: 0;
-}
-ul.gnav li {
-  border: 1px solid #bbb;
-  border-width: 0 1px 0 0;
-  float: left;
-  padding: 0 10px;
-}
-ul.gnav li:last-child,
-ul.gnav li::last-child{
-  border-right: none;
-}
 /* !CLEARFIX */
 .clearfix,
-.cf,
-ul.gnav {
-  zoom: 1;
+.cf {
+  /zoom: 1;
 }
 .clearfix:after,
 .cf:after,
 .clearfix::after,
-.cf::after,
-ul.gnav:after,
-ul.gnav::after {
+.cf::after {
   clear: both;
   content: "";
   display: block;
@@ -1144,21 +1126,6 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   img {
     max-width: 100%;
     height: auto;
-  }
-  ul.gnav li{
-    display: none;
-    float: none;
-    border-right: none;
-  }
-  ul.gnav li a{
-    display: block;
-  }
-  ul.gnav:before,
-  ul.gnav::before {
-    content: 'メニュー';
-    cursor: pointer;
-    display: block;
-    margin: 10px;
   }
 }
 /*--- END MOBILE ---*/
