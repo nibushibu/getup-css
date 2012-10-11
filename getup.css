@@ -615,23 +615,27 @@ ol {
 }
 ul,
 ol,
-ul.square,
-ul.circle,
-ul.disc {
+.square,
+.circle,
+.disc {
   padding-left: 2em;
 }
 ul ul,
 ol ul {
   list-style-type: disc;
 }
-ul.square {
+.square {
   list-style: square outside;
 }
-ul.circle {
+.circle {
   list-style: circle outside;
 }
-ul.disc {
+.disc {
   list-style: disc outside;
+}
+.not-list {
+  list-style: none;
+  padding-left: 0;
 }
 dl {
   margin-bottom: .833em;
