@@ -18,16 +18,16 @@ inuit.css http://csswizardry.com/inuitcss/
 Copyright 2011 Harry Roberts
 */
 /* //////////////////////////////////////////////////
-	1.リセット
-	2.グリッドレイアウト
-	3.タイポグラフィ
-	4.画像
-	5.フォーム
-	6.テーブル
-	7.汎用クラス
-	8.モバイル設定
-	9.印刷設定
-	10.カスタム設定
+  1.リセット
+  2.グリッドレイアウト
+  3.タイポグラフィ
+  4.画像
+  5.フォーム
+  6.テーブル
+  7.汎用クラス
+  8.モバイル設定
+  9.印刷設定
+  10.カスタム設定
 ////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////// */
 /* !リセット */
@@ -594,7 +594,7 @@ a {
 /* !訪問済みリンクを透過80%に。モダンブラウザ向け。 */
 /*
 a:visited{
-	opacity:0.8;
+  opacity:0.8;
 }
 */
 a:hover {
@@ -603,8 +603,8 @@ a:hover {
 /* リンククリック時に1px沈み込む設定 */
 /*
 a:active{
-	position:relative;
-	top:1px;
+  position:relative;
+  top:1px;
 }
 */
 ul {
@@ -704,8 +704,8 @@ img {
   /* 以下の一行はIE8で表示バグあり。floatしたリスト内などで画像が表示されない場合がある。 */
 
   /*
-	max-width:100%;
-	height:auto;
+  max-width:100%;
+  height:auto;
 */
 
   vertical-align: top;
@@ -733,8 +733,8 @@ embed,
 video {
   max-width: 100%;
   /*
-	以下のheight指定は、旧いIEにバグ有り。
-	height:auto;
+  以下のheight指定は、旧いIEにバグ有り。
+  height:auto;
 */
 
 }
@@ -756,7 +756,7 @@ button {
 モダンブラウザ向け
 label:after,
 label::after{
-	content:":";
+  content:":";
 }
 */
 input,
@@ -775,7 +775,7 @@ table {
 }
 th:empty {
   /* 空のセルのボーダーを消す。モダンブラウザ向け */
-  /* 	border:none; */
+  /*  border:none; */
 }
 th,
 td {
@@ -790,21 +790,21 @@ th {
 /* colspanやrowspanを設定したセルの表示設定。モダンブラウザ向け */
 /*
 table [colspan]{
-	text-align:center;
+  text-align:center;
 }
 table [rowspan]{
-	vertical-align:middle;
+  vertical-align:middle;
 }
 [colspan="1"]{
-	text-align:left;
+  text-align:left;
 }
 [rowspan="1"]{
-	vertical-align:top;
+  vertical-align:top;
 }
 */
 /* 一つおきにセルの色を変更。モダンブラウザ向け
 tbody tr:nth-of-type(odd){
-	background:rgba(0,0,0,0.05);
+  background:rgba(0,0,0,0.05);
 }
 */
 tfoot {
@@ -1174,26 +1174,26 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   /*
   a:link:after,a:visited:after,
   a:link::after,a:visited::after{
-  	content:" (" attr(href) ")";
-  	font-size:smaller;
+    content:" (" attr(href) ")";
+    font-size:smaller;
   }
   */
   /* サイト内リンクを表示(モダンブラウザ向け */
   /*
   a[href^="/"]:after,
   a[href^="/"]::after{
-  	content:" (http://your-domain.com" attr(href) ")";
-  	font-size:smaller;
+    content:" (http://your-domain.com" attr(href) ")";
+    font-size:smaller;
   }
   */
   /* Flashには大体テキストを表示(モダンブラウザ向け) */
   /*
   object:after,
   object::after{
-  	content:"Flash/video content. Head to http://yoururlhere.com/ to view this content.";
-  	display:block;
-  	font-weight:bold;
-  	margin-bottom:1.667em;
+    content:"Flash/video content. Head to http://yoururlhere.com/ to view this content.";
+    display:block;
+    font-weight:bold;
+    margin-bottom:1.667em;
   }
   */
 }
@@ -1205,9 +1205,9 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 /* !テキストハイライトカラー */
 /*
 p::selection {
-	background: #FFAE10;
+  background: #FFAE10;
 }
 p::-moz-selection {
-	background: #FFAE10;
+  background: #FFAE10;
 }
 */
