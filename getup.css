@@ -882,6 +882,16 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   overflow: hidden !important;
   /zoom: 1;
 }
+
+/*
+!画像置換
+paddingで高さを設定する。
+*/
+.alt-img {
+  height: 0;
+  overflow: hidden;
+}
+
 /* spacing helpers
 p,m = padding,margin
 a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
@@ -1146,12 +1156,12 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   /*
   body要素の幅を75%にしてセンタリング(marginで設定しているのでIE6非対応)。
   フォントサイズを12pxに(基本サイズ16px想定)
-  */
   body {
     width: 75%;
     margin: 0 auto;
     font-size: 0.75em;
   }
+  */
   /* グローバルナビ削除 */
   #nav,
   #footer,
@@ -1169,6 +1179,12 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   img {
     max-width: 100%;
     height: auto;
+  }
+  /* !画像置換をキャンセル */
+  .alt-img {
+    background-image: none !important;
+    height: auto !important;
+    padding: 0 !important;
   }
   /* href要素を表示(モダンブラウザ向け) */
   /*
