@@ -892,6 +892,13 @@ paddingで高さを設定する。
   overflow: hidden;
 }
 
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
 /* spacing helpers
 p,m = padding,margin
 a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
@@ -1101,12 +1108,19 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 /* !タブレットサイズ */
 /* ////////////////////////////////////////////// */
 @media (max-width: 720px) {
+  .breakpoint-1 > .unit,
   .linearize-from-tablet > .unit {
     clear: both;
     display: block;
     padding-left: 0;
     padding-right: 0;
     width: 100% !important;
+  }
+  .show-breakpoint-1 {
+    display: block;
+  }
+  .hide-breakpoint-1 {
+    display: none;
   }
 }
 
@@ -1120,14 +1134,18 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     -webkit-text-size-adjust: none;
     /* デバイスが横になった時の文字拡大をOFF */
   }
-  .linearize-from-mobile > .unit {
+  .breakpoint-2 > .unit,
+  .linearize-from-motile > .unit {
     clear: both;
     display: block;
     padding-left: 0;
     padding-right: 0;
     width: 100% !important;
   }
-  .no-mobile {
+  .show-breakpoint-2 {
+    display: block;
+  }
+  .hide-breakpoint-2 {
     display: none;
   }
   /* ////////////////////////// */
