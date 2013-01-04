@@ -724,6 +724,7 @@ img.fr {
 }
 img.aligncenter,
 img.ac {
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
