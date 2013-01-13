@@ -1113,6 +1113,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   .linearize-from-tablet > .unit {
     clear: both;
     display: block;
+    float: none;
     padding-left: 0;
     padding-right: 0;
     width: 100% !important;
@@ -1139,6 +1140,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   .linearize-from-motile > .unit {
     clear: both;
     display: block;
+    float: none;
     padding-left: 0;
     padding-right: 0;
     width: 100% !important;
