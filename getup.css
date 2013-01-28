@@ -16,8 +16,9 @@ All rights reserved.
 
 inuit.css http://csswizardry.com/inuitcss/
 Copyright 2011 Harry Roberts
-*/
-/* //////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////
   1.リセット
   2.グリッドレイアウト
   3.タイポグラフィ
@@ -28,10 +29,11 @@ Copyright 2011 Harry Roberts
   8.モバイル設定
   9.印刷設定
   10.カスタム設定
-////////////////////////////////////////////////// */
-/* ///////////////////////////////////////////// */
-/* !リセット */
-/* ///////////////////////////////////////////// */
+//////////////////////////////////////////////////
+
+/////////////////////////////////////////////
+  リセット
+///////////////////////////////////////////// */
 html,
 body,
 div,
@@ -113,6 +115,7 @@ video {
   margin: 0;
   padding: 0;
 }
+
 article,
 aside,
 details,
@@ -126,14 +129,17 @@ nav,
 section {
   display: block;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 fieldset,
 img {
   border: 0;
 }
+
 address,
 caption,
 cite,
@@ -143,13 +149,16 @@ var {
   font-style: normal;
   font-weight: normal;
 }
+
 caption,
 th {
   text-align: left;
 }
+
 caption {
   font-weight: bold;
 }
+
 h1,
 h2,
 h3,
@@ -159,14 +168,17 @@ h6 {
   font-size: 100%;
   font-weight: normal;
 }
+
 q:before,
 q:after {
   content: '';
 }
+
 abbr,
 acronym {
   border: 0;
 }
+
 html {
   font-size: 75%;/* →12px */
   font-family: "Lucida Grande", Arial, sans-serif;
@@ -174,18 +186,22 @@ html {
   /* !text-renderingプロパティ 参考:http://terkel.jp/archives/2012/09/text-rendering-optimizelegibility/ */
   text-rendering: optimizeLegibility;
 }
-/* ////////////////////////////////////////////// */
-/* !グリッドレイアウト */
-/* ////////////////////////////////////////////// */
+
+/* //////////////////////////////////////////////
+  グリッドレイアウト
+////////////////////////////////////////////// */
+
 .line {
   margin: 0;
   padding: 0;
 }
-.line,
-.last-unit {
-  /overflow: visible;
-  /zoom: 1;
+
+.lt-ie8 .line,
+.lt-ie8 .last-unit {
+  overflow: visible;
+  zoom: 1;
 }
+
 .line:after,
 .line::after{
   clear: both;
@@ -193,329 +209,436 @@ html {
   display: block;
   height: 0;
 }
+
 .unit{
   float: left;
   list-style: none;
 }
-.unit {
-  /zoom: 1;
+
+.le-ie8 .unit{
+  zoom: 1;
 }
+
 .right-unit {
   float: right;
 }
+
 .size1of2 {
   width: 50%;
 }
+
 .size1of3 {
   width: 33.333333%;
 }
+
 .size2of3 {
   width: 66.666666%;
 }
+
 .size1of4 {
   width: 25%;
 }
+
 .size3of4 {
   width: 75%;
 }
+
 .size1of5 {
   width: 20%;
 }
+
 .size2of5 {
   width: 40%;
 }
+
 .size3of5 {
   width: 60%;
 }
+
 .size4of5 {
   width: 80%;
 }
+
 .size1of6 {
   width: 16.666666%;
 }
+
 .size5of6 {
   width: 83.333333%;
 }
+
 .size1of7 {
   width: 14.2857143%;
 }
+
 .size2of7 {
   width: 28.5714286%;
 }
+
 .size3of7 {
   width: 42.8571429%;
 }
+
 .size4of7 {
   width: 57.1428571%;
 }
+
 .size5of7 {
   width: 71.4285714%;
 }
+
 .size6of7 {
   width: 85.7142857%;
 }
+
 .size1of8 {
   width: 12.5%;
 }
+
 .size3of8 {
   width: 37.5%;
 }
+
 .size5of8 {
   width: 62.5%;
 }
+
 .size7of8 {
   width: 87.5%;
 }
+
 .size1of9 {
   width: 11.111111111%;
 }
+
 .size2of9 {
   width: 22.222222222%;
 }
+
 .size3of9 {
   width: 33.333333333%;
 }
+
 .size4of9 {
   width: 44.444444444%;
 }
+
 .size5of9 {
   width: 55.555555555%;
 }
+
 .size6of9 {
   width: 66.666666666%;
 }
+
 .size7of9 {
   width: 77.777777777%;
 }
+
 .size8of9 {
   width: 88.888888888%;
 }
+
 .size1of10 {
   width: 10%;
 }
+
 .size3of10 {
   width: 30%;
 }
+
 .size4of10 {
   width: 40%;
 }
+
 .size7of10 {
   width: 70%;
 }
+
 .size9of10 {
   width: 90%;
 }
+
 .before1of2 {
   padding-left: 50%;
 }
+
 .before1of3 {
   padding-left: 33.333333%;
 }
+
 .before2of3 {
   padding-left: 66.666666%;
 }
+
 .before1of4 {
   padding-left: 25%;
 }
+
 .before3of4 {
   padding-left: 75%;
 }
+
 .before1of5 {
   padding-left: 20%;
 }
+
 .before2of5 {
   padding-left: 40%;
 }
+
 .before3of5 {
   padding-left: 60%;
 }
+
 .before4of5 {
   padding-left: 80%;
 }
+
 .before1of6 {
   padding-left: 16.666666%;
 }
+
 .before5of6 {
   padding-left: 83.333333%;
 }
+
 .before1of7 {
   padding-left: 14.2857143%;
 }
+
 .before2of7 {
   padding-left: 28.5714286%;
 }
+
 .before3of7 {
   padding-left: 42.8571429%;
 }
+
 .before4of7 {
   padding-left: 57.1428571%;
 }
+
 .before5of7 {
   padding-left: 71.4285714%;
 }
+
 .before6of7 {
   padding-left: 85.7142857%;
 }
+
 .before1of8 {
   padding-left: 12.5%;
 }
+
 .before3of8 {
   padding-left: 37.5%;
 }
+
 .before5of8 {
   padding-left: 62.5%;
 }
+
 .before7of8 {
   padding-left: 87.5%;
 }
+
 .before1of9 {
   padding-left: 11.111111111%;
 }
+
 .before2of9 {
   padding-left: 22.222222222%;
 }
+
 .before3of9 {
   padding-left: 33.333333333%;
 }
+
 .before4of9 {
   padding-left: 44.444444444%;
 }
+
 .before5of9 {
   padding-left: 55.555555555%;
 }
+
 .before6of9 {
   padding-left: 66.666666666%;
 }
+
 .before7of9 {
   padding-left: 77.777777777%;
 }
+
 .before8of9 {
   padding-left: 88.888888888%;
 }
+
 .before1of10 {
   padding-left: 10%;
 }
+
 .before3of10 {
   padding-left: 30%;
 }
+
 .before4of10 {
   padding-left: 40%;
 }
+
 .before7of10 {
   padding-left: 70%;
 }
+
 .before9of10 {
   padding-left: 90%;
 }
+
 .after1of2 {
   padding-right: 50%;
 }
+
 .after1of3 {
   padding-right: 33.333333%;
 }
+
 .after2of3 {
   padding-right: 66.666666%;
 }
+
 .after1of4 {
   padding-right: 25%;
 }
+
 .after3of4 {
   padding-right: 75%;
 }
+
 .after1of5 {
   padding-right: 20%;
 }
+
 .after2of5 {
   padding-right: 40%;
 }
+
 .after3of5 {
   padding-right: 60%;
 }
+
 .after4of5 {
   padding-right: 80%;
 }
+
 .after1of6 {
   padding-right: 16.666666%;
 }
+
 .after5of6 {
   padding-right: 83.333333%;
 }
+
 .after1of7 {
   padding-right: 14.2857143%;
 }
+
 .after2of7 {
   padding-right: 28.5714286%;
 }
+
 .after3of7 {
   padding-right: 42.8571429%;
 }
+
 .after4of7 {
   padding-right: 57.1428571%;
 }
+
 .after5of7 {
   padding-right: 71.4285714%;
 }
+
 .after6of7 {
   padding-right: 85.7142857%;
 }
+
 .after1of8 {
   padding-right: 12.5%;
 }
+
 .after3of8 {
   padding-right: 37.5%;
 }
+
 .after5of8 {
   padding-right: 62.5%;
 }
+
 .after7of8 {
   padding-right: 87.5%;
 }
+
 .after1of9 {
   padding-right: 11.111111111%;
 }
+
 .after2of9 {
   padding-right: 22.222222222%;
 }
+
 .after3of9 {
   padding-right: 33.333333333%;
 }
+
 .after4of9 {
   padding-right: 44.444444444%;
 }
+
 .after5of9 {
   padding-right: 55.555555555%;
 }
+
 .after6of9 {
   padding-right: 66.666666666%;
 }
+
 .after7of9 {
   padding-right: 77.777777777%;
 }
+
 .after8of9 {
   padding-right: 88.888888888%;
 }
+
 .after1of10 {
   padding-right: 10%;
 }
+
 .after3of10 {
   padding-right: 30%;
 }
+
 .after4of10 {
   padding-right: 40%;
 }
+
 .after7of10 {
   padding-right: 70%;
 }
+
 .after9of10 {
   padding-right: 90%;
 }
+
 .lt-ie8 .last-unit {
   float: none;
-  /position: relative;
-  /left: -3px;
-  /margin-right: -3px;
+  position: relative;
+  left: -3px;
+  margin-right: -3px;
   width: auto;
 }
+
 /* ///////////////////////////////////////////////// */
 /* !タイポグラフィ */
 /* ///////////////////////////////////////////////// */
@@ -535,6 +658,7 @@ blockquote,
 .mod {
   margin: 10px;
 }
+
 h1,
 h2,
 h3,
@@ -543,9 +667,11 @@ h5,
 h6 {
   font-weight: bold;
 }
+
 pre {
   margin: 10px;
 }
+
 table h1,
 table h2,
 table h3,
@@ -564,55 +690,68 @@ ol ol,
 ol dl {
   margin: 0;
 }
+
 h1 {
   font-size: 2em;
   /* 24px */
 }
+
 h2 {
   font-size: 1.667em;
   /* 20px */
 }
+
 h3 {
   font-size: 1.5em;
   /* 18px */
 }
+
 h4 {
   font-size: 1.333em;
   /* 16px */
 }
+
 h5 {
   font-size: 1.167em;
   /* 14px */
 }
+
 h6 {
   font-size: 1em;
   /* 12px */
 }
+
 a {
   text-decoration: none;
 }
+
 /* !訪問済みリンクを透過80%に。モダンブラウザ向け。 */
 /*
 a:visited{
   opacity:0.8;
 }
+
 */
 a:hover {
   text-decoration: underline;
 }
+
 /* リンククリック時に1px沈み込む設定 */
 /*
 a:active{
   position:relative;
   top:1px;
 }
+
 */
 ul {
   list-style-position: outside;
 }
+
 ol {
   list-style: decimal;
 }
+
 ul,
 ol,
 .square,
@@ -620,32 +759,41 @@ ol,
 .disc {
   padding-left: 2em;
 }
+
 ul ul,
 ol ul {
   list-style-type: disc;
 }
+
 .square {
   list-style: square outside;
 }
+
 .circle {
   list-style: circle outside;
 }
+
 .disc {
   list-style: disc outside;
 }
+
 .not-list {
   list-style: none;
   padding-left: 0;
 }
+
 dl {
   margin-bottom: .833em;
 }
+
 dt {
   font-weight: bold;
 }
+
 dd {
   margin-left: 1.667em;
 }
+
 q,
 i,
 em,
@@ -653,37 +801,46 @@ cite {
   font-style: italic;
   font-weight: inherit;
 }
+
 b,
 strong {
   font-weight: bold;
   font-style: inherit;
 }
+
 mark {
   background: #ffc;
 }
+
 s,
 del {
   text-decoration: line-through;
 }
+
 small {
   font-size: 0.9em;
   line-height: 1;
 }
+
 pre,
 code {
   font-family: monospace;
   font-size: 1.2em;
 }
+
 pre {
   overflow: auto;
   line-height: 1;
 }
+
 code {
   line-height: 1;
 }
+
 .caps {
   text-transform: uppercase;
 }
+
 pre,
 code,
 kbd,
@@ -693,9 +850,11 @@ tt {
   *font-size: 108%;
   line-height: 100%;
 }
-/* /////////////////////////////////////////// */
-/* !画像 */
-/* /////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////
+  画像
+/////////////////////////////////////////// */
+
 img {
   /* altテキストの表示を調整 */
 
@@ -710,24 +869,28 @@ img {
 
   vertical-align: top;
 }
+
 img.left,
 img.alignleft,
 img.fl {
   float: left;
   margin: 0 10px 10px 0;
 }
+
 img.right,
 img.alignright,
 img.fr {
   float: right;
   margin: 0 0 10px 10px;
 }
+
 img.aligncenter,
 img.ac {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 /*--- Flashやビデオ要素 ---*/
 object,
 embed,
@@ -739,9 +902,11 @@ video {
 */
 
 }
+
 p img {
   vertical-align: middle;
 }
+
 /* ////////////////////////////////////////// */
 /* !フォーム */
 /* ////////////////////////////////////////// */
@@ -749,16 +914,19 @@ fieldset {
   padding: 10px;
   border: 1px solid #ccc;
 }
+
 label,
 button {
   cursor: pointer;
 }
+
 /*
 モダンブラウザ向け
 label:after,
 label::after{
   content:":";
 }
+
 */
 input,
 textarea {
@@ -766,6 +934,7 @@ textarea {
   font-size: 1em;
   line-height: 1.5;
 }
+
 /* ////////////////////////////////////////// */
 /* !テーブル */
 /* ////////////////////////////////////////// */
@@ -774,61 +943,74 @@ table {
   border-spacing: 0;
   max-width: 100%;
 }
+
 th:empty {
   /* 空のセルのボーダーを消す。モダンブラウザ向け */
   /*  border:none; */
 }
+
 th,
 td {
   vertical-align: middle;
   padding: 0.5em;
   border: 1px solid #ccc;
 }
+
 th {
   font-weight: bold;
   text-align: center;
 }
+
 /* colspanやrowspanを設定したセルの表示設定。モダンブラウザ向け */
 /*
 table [colspan]{
   text-align:center;
 }
+
 table [rowspan]{
   vertical-align:middle;
 }
+
 [colspan="1"]{
   text-align:left;
 }
+
 [rowspan="1"]{
   vertical-align:top;
 }
+
 */
 /* 一つおきにセルの色を変更。モダンブラウザ向け
 tbody tr:nth-of-type(odd){
   background:rgba(0,0,0,0.05);
 }
+
 */
 tfoot {
   text-align: center;
 }
+
 tfoot td {
   border-top-width: 2px;
-}
+}　
 table ul,
 table ol {
   margin-bottom: 0;
 }
+
 .data table {
   width: 100%;
 }
+
 /* /////////////////////////////////////////////// */
 /* !汎用クラス */
 /* /////////////////////////////////////////////// */
 /* !CLEARFIX */
-.clearfix,
-.cf {
-  /zoom: 1;
+.lt-ie8 .clearfix,
+.lt-ie8 .cf {
+  zoom: 1;
 }
+
 .clearfix:after,
 .cf:after,
 .clearfix::after,
@@ -838,6 +1020,7 @@ table ol {
   display: block;
   height: 0;
 }
+
 /* テキスト方向
 以下のWordpressのリッチテキストエディタが付加するクラス(※)も合わせて設定
 ※ .alignleft / .alignright / .aligncenter
@@ -846,14 +1029,17 @@ table ol {
 .alignleft {
   text-align: left !important;
 }
+
 .txtr,
 .alignright {
   text-align: right !important;
 }
+
 .txtc,
 .aligncenter {
   text-align: center !important;
 }
+
 /* フロート
 Wordpressのリッチテキストエディタが付加するクラス(※)を網羅。
 ※ .left / .right / .clear
@@ -861,27 +1047,41 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 .left {
   float: left;
   margin-top: 0;
-  /display: inline;
 }
+
+.lt-ie8 .left {
+  display: inline;
+}
+
 .right {
   float: right;
   margin-top: 0;
-  /display: inline;
 }
+
+.lt-ie8 .right {
+  display: inline;
+}
+
 .clear {
   clear: both;
   float: none;
 }
+
 /* common stracture */
 .posr {
   position: relative !important;
 }
+
 .posa {
   position: absolute !important;
 }
+
 .ovh {
   overflow: hidden !important;
-  /zoom: 1;
+}
+
+.lt-ie8 .ovh {
+  zoom: 1;
 }
 
 /*
@@ -896,6 +1096,7 @@ paddingで高さを設定する。
 .hide {
   display: none;
 }
+
 .show {
   display: block;
 }
@@ -910,201 +1111,241 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 .pan {
   padding-top: 0px !important;
 }
+
 .pts,
 .pvs,
 .pas {
   padding-top: 5px !important;
 }
+
 .ptm,
 .pvm,
 .pam {
   padding-top: 10px !important;
 }
+
 .ptl,
 .pvl,
 .pal {
   padding-top: 20px !important;
 }
+
 .pt2l,
 .pv2l,
 .pa2l {
   padding-top: 30px !important;
 }
+
 .prn,
 .phn,
 .pan {
   padding-right: 0px !important;
 }
+
 .prs,
 .phs,
 .pas {
   padding-right: 5px !important;
 }
+
 .prm,
 .phm,
 .pam {
   padding-right: 10px !important;
 }
+
 .prl,
 .phl,
 .pal {
   padding-right: 20px !important;
 }
+
 .pr2l,
 .ph2l,
 .pa2l {
   padding-right: 30px !important;
 }
+
 .pbn,
 .pvn,
 .pan {
   padding-bottom: 0px !important;
 }
+
 .pbs,
 .pvs,
 .pas {
   padding-bottom: 5px !important;
 }
+
 .pbm,
 .pvm,
 .pam {
   padding-bottom: 10px !important;
 }
+
 .pbl,
 .pvl,
 .pal {
   padding-bottom: 20px !important;
 }
+
 .pb2l,
 .pv2l,
 .pa2l {
   padding-bottom: 30px !important;
 }
+
 .pln,
 .phn,
 .pan {
   padding-left: 0px !important;
 }
+
 .pls,
 .phs,
 .pas {
   padding-left: 5px !important;
 }
+
 .plm,
 .phm,
 .pam {
   padding-left: 10px !important;
 }
+
 .pll,
 .phl,
 .pal {
   padding-left: 20px !important;
 }
+
 .pl2l,
 .ph2l,
 .pa2l {
   padding-left: 30px !important;
 }
+
 .mtn,
 .mvn,
 .man {
   margin-top: 0px !important;
 }
+
 .mts,
 .mvs,
 .mas {
   margin-top: 5px !important;
 }
+
 .mtm,
 .mvm,
 .mam {
   margin-top: 10px !important;
 }
+
 .mtl,
 .mvl,
 .mal {
   margin-top: 20px !important;
 }
+
 .mt2l,
 .mv2l,
 .ma2l {
   margin-top: 30px !important;
 }
+
 .mrn,
 .mhn,
 .man {
   margin-right: 0px !important;
 }
+
 .mrs,
 .mhs,
 .mas {
   margin-right: 5px !important;
 }
+
 .mrm,
 .mhm,
 .mam {
   margin-right: 10px !important;
 }
+
 .mrl,
 .mhl,
 .mal {
   margin-right: 20px !important;
 }
+
 .mr2l,
 .mh2l,
 .ma2l {
   margin-right: 30px !important;
 }
+
 .mbn,
 .mvn,
 .man {
   margin-bottom: 0px !important;
 }
+
 .mbs,
 .mvs,
 .mas {
   margin-bottom: 5px !important;
 }
+
 .mbm,
 .mvm,
 .mam {
   margin-bottom: 10px !important;
 }
+
 .mbl,
 .mvl,
 .mal {
   margin-bottom: 20px !important;
 }
+
 .mb2l,
 .mv2l,
 .ma2l {
   margin-bottom: 30px !important;
 }
+
 .mln,
 .mhn,
 .man {
   margin-left: 0px !important;
 }
+
 .mls,
 .mhs,
 .mas {
   margin-left: 5px !important;
 }
+
 .mlm,
 .mhm,
 .mam {
   margin-left: 10px !important;
 }
+
 .mll,
 .mhl,
 .mal {
   margin-left: 20px !important;
 }
+
 .ml2l,
 .mh2l,
 .ma2l {
   margin-left: 30px !important;
 }
+
 /* ////////////////////////////////////////////// */
 /* !タブレットサイズ */
 /* ////////////////////////////////////////////// */
@@ -1118,11 +1359,14 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     padding-right: 0;
     width: 100% !important;
   }
+  
   .show-breakpoint-1 {
     display: block;
   }
+  
   .hide-breakpoint-1 {
     display: none;
+ 
   }
 }
 
@@ -1136,6 +1380,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     -webkit-text-size-adjust: none;
     /* デバイスが横になった時の文字拡大をOFF */
   }
+  
   .breakpoint-2 > .unit,
   .linearize-from-motile > .unit {
     clear: both;
@@ -1145,21 +1390,29 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     padding-right: 0;
     width: 100% !important;
   }
+  
   .show-breakpoint-2 {
     display: block;
   }
+  
   .hide-breakpoint-2 {
     display: none;
   }
-  /* ////////////////////////// */
+  
   /* 画像 */
-  /* ////////////////////////// */
   img {
     max-width: 100%;
     height: auto;
   }
+
+  /* テーブル */
+  table {
+    overflow: auto;
+  }
+
 }
 /*--- END MOBILE ---*/
+
 /* ////////////////////////////////// */
 /* !印刷用 */
 /* ////////////////////////////////// */
@@ -1174,6 +1427,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     text-shadow: none !important;
     box-shadow: none !important;
   }
+  
   /*
   body要素の幅を75%にしてセンタリング(marginで設定しているのでIE6非対応)。
   フォントサイズを12pxに(基本サイズ16px想定)
@@ -1182,6 +1436,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     margin: 0 auto;
     font-size: 0.75em;
   }
+  
   */
   /* グローバルナビ削除 */
   #nav,
@@ -1190,23 +1445,27 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   footer {
     display: none;
   }
+  
   /* グリッドでレイアウトした要素は縦に並べる */
   .unit {
     width: auto;
     float: none;
     clear: both;
   }
+  
   /* 画像がはみ出したり変形したりしないように。 */
   img {
     max-width: 100%;
     height: auto;
   }
+  
   /* !画像置換をキャンセル */
   .alt-img {
     background-image: none !important;
     height: auto !important;
     padding: 0 !important;
   }
+  
   /* href要素を表示(モダンブラウザ向け) */
   /*
   a:link:after,a:visited:after,
@@ -1214,6 +1473,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     content:" (" attr(href) ")";
     font-size:smaller;
   }
+  
   */
   /* サイト内リンクを表示(モダンブラウザ向け */
   /*
@@ -1222,6 +1482,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     content:" (http://your-domain.com" attr(href) ")";
     font-size:smaller;
   }
+  
   */
   /* Flashには大体テキストを表示(モダンブラウザ向け) */
   /*
@@ -1232,8 +1493,10 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
     font-weight:bold;
     margin-bottom:1.667em;
   }
+  
   */
 }
+
 /*--- END PRINT ---*/
 
 /* //////////////////////////////////////////// */
@@ -1244,7 +1507,9 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 p::selection {
   background: #FFAE10;
 }
+
 p::-moz-selection {
   background: #FFAE10;
 }
+
 */
