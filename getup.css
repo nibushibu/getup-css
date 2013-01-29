@@ -1089,6 +1089,7 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 paddingで高さを設定する。
 */
 .alt-img {
+  display: block;
   height: 0;
   overflow: hidden;
 }
