@@ -29,9 +29,9 @@ Copyright 2011 Harry Roberts
   8.モバイル設定
   9.印刷設定
   10.カスタム設定
-//////////////////////////////////////////////////*/
+//////////////////////////////////////////////////
 
-/* リセット */
+リセット */
 html,
 body,
 div,
@@ -178,14 +178,16 @@ acronym {
 }
 
 html {
-  font-size: 75%;/* →12px 
+  font-size: 75%;/* →12px */
   font-family: "Lucida Grande", Arial, sans-serif;
   line-height: 1.666667;/* →20px */
   /* !text-renderingプロパティ 参考:http://terkel.jp/archives/2012/09/text-rendering-optimizelegibility/ */
   text-rendering: optimizeLegibility;
 }
 
-/* グリッドレイアウト */
+/* //////////////////////////////////////////////
+  グリッドレイアウト
+////////////////////////////////////////////// */
 
 .line {
   margin: 0;
@@ -882,7 +884,7 @@ img.ac {
   margin-right: auto;
 }
 
-/*--- Flashやビデオ要素 ---*/
+/* Flashやビデオ要素 */
 object,
 embed,
 video {
@@ -915,8 +917,8 @@ label:after,
 label::after{
   content:":";
 }
-
 */
+
 input,
 textarea {
   font-family: inherit;
@@ -971,8 +973,8 @@ table [rowspan]{
 tbody tr:nth-of-type(odd){
   background:rgba(0,0,0,0.05);
 }
-
 */
+
 tfoot {
   text-align: center;
 }
@@ -1489,5 +1491,4 @@ p::selection {
 p::-moz-selection {
   background: #FFAE10;
 }
-
 */
