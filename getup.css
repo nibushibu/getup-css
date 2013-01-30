@@ -594,6 +594,10 @@ html {
   zoom: 1;
 }
 
+.ie8 .line {
+  overflow: hidden;
+}
+
 .line:after,
 .line::after{
   clear: both;
