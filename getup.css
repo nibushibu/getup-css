@@ -1168,7 +1168,8 @@ ol ul {
   list-style: disc outside;
 }
 
-.not-list {
+.not-list,
+.no-list {
   list-style: none;
   padding-left: 0;
 }
