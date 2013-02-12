@@ -1968,7 +1968,8 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   #nav,
   #footer,
   nav,
-  footer {
+  footer,
+  .no-print {
     display: none;
   }
   
