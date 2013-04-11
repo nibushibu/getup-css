@@ -1360,27 +1360,29 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 
 /* !タブレットサイズ */
 @media (max-width: 720px) {
+
   .breakpoint-1 > .unit,
   .linearize-from-tablet > .unit {
     clear: both;
     display: block;
-    padding-left: 0;
+    padding-left: 0; 
     padding-right: 0;
     width: 100% !important;
   }
   
   .show-breakpoint-1 {
-    display: block;
+    display: block !important;
   }
   
   .hide-breakpoint-1 {
-    display: none;
- 
+    display: none !important;
   }
+
 }
 
 /* !モバイルサイズ */
 @media (max-width: 480px) {
+
   html {
     font-size: 0.875em;
     /* Mobileではデフォルトのテキストサイズを14pxに */
@@ -1398,11 +1400,11 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
   }
   
   .show-breakpoint-2 {
-    display: block;
+    display: block !important;
   }
   
   .hide-breakpoint-2 {
-    display: none;
+    display: none !important;
   }
   
   /* 画像 */
@@ -1421,6 +1423,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 
 /* !印刷用 */
 @media print {
+
   /* テキストシャドウなど不要なエフェクトを無効化 */
   * {
     background: #fff;
@@ -1468,7 +1471,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
       font-weight:bold;
     }
   */
-  
+
 }
 
 /*--- END PRINT ---*/
