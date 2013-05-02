@@ -940,10 +940,11 @@ table ol {
 }
 
 /* カスタム設定 */
-.myclass {
-  margin: 0;
-}
+/*
 
+ここに個別に必要なクラスの追加
+
+*/
 /* 上書きクラス */
 /* CLEARFIX */
 .lt-ie8 .clearfix,
