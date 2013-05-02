@@ -836,6 +836,8 @@ table ol {
   border: 1px solid #f00;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
   padding: 10px;
 }

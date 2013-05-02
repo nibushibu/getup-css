@@ -828,9 +828,7 @@ table ol {
 .chromeframe {
   background-color: #fff3f3;
   border: 1px solid #f00;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius();
   padding: 10px;
 }
 
