@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*
 Getup.css is released under the Open Source MIT license.
 http://www.opensource.org/licenses/mit-license.php
@@ -8,6 +9,7 @@ Getup.css is inspired by OOCSS, inuit.css, Twitter Bootstrap, HTML5 Boilerplate,
 LICENSE
 https://github.com/nibushibu/getup-css/blob/master/LICENSE
 */
+
 /*
   テキスト関連初期設定
   タイポグラフィ
@@ -21,11 +23,17 @@ https://github.com/nibushibu/getup-css/blob/master/LICENSE
   モバイル設定
   印刷設定
 */
+
+@import "compass";
+$jsdir: "/u/175530/getup-css/js";
+
 /* テキスト関連初期設定 */
+
 html {
-  font-size: 81.25%;
+  font-size: 81.25%;// →13px
   font-family: "Lucida Grande", Arial, sans-serif;
   line-height: 1.5;
+  // text-renderingプロパティ 参考:http://terkel.jp/archives/2012/09/text-rendering-optimizelegibility/
   text-rendering: optimizeLegibility;
 }
 
@@ -40,7 +48,8 @@ html {
 }
 
 /* タイポグラフィ */
-/* 見出し */
+
+/* 見出し */ 
 h1,
 h2,
 h3,
@@ -90,27 +99,27 @@ ol dl {
 }
 
 h1 {
-  font-size: 1.84615384615385em;
+  font-size: 1.84615384615385em;// 24px
 }
 
 h2 {
-  font-size: 1.53846153846154em;
+  font-size: 1.53846153846154em;// 20px
 }
 
 h3 {
-  font-size: 1.38461538461538em;
+  font-size: 1.38461538461538em;// 18px
 }
 
 h4 {
-  font-size: 1.23076923076923em;
+  font-size: 1.23076923076923em;// 16px
 }
 
 h5 {
-  font-size: 1.07692307692308em;
+  font-size: 1.07692307692308em;// 14px
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 1em;// 13px
 }
 
 a {
@@ -283,20 +292,10 @@ textarea {
   padding: 4px 6px;
   color: #555555;
   vertical-align: middle;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  @include border-radius(4px);
   border: 1px solid #ccc;
-  -webkit-box-shadow: 0px 0px 5px inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: 0px 0px 5px inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: 0px 0px 5px inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border linear, box-shadow linear;
-  -webkit-transition-delay: 0.2s, 0.2s;
-  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-  transition: border linear 0.2s, box-shadow linear 0.2s;
+  @include single-box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+  @include transition(border linear 0.2s, box-shadow linear 0.2s);
 }
 
 textarea {
@@ -308,9 +307,7 @@ select:focus,
 textarea:focus {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6));
 }
 
 .lt-ie9 input:focus,
@@ -350,9 +347,7 @@ tfoot {
 
 tfoot td {
   border-top-width: 2px;
-}
-
-　
+}　
 table ul,
 table ol {
   margin-bottom: 0;
@@ -378,27 +373,25 @@ table ol {
 }
 
 .line:after,
-.line::after {
+.line::after{
   clear: both;
   content: "";
   display: block;
   height: 0;
 }
 
-.unit {
+.unit{
   float: left;
   list-style: none;
 }
 
 .unit, .unit:after, .unit:before,
 .line, .line:after, .line:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  *behavior: url("/u/175530/getup-css/js/boxsizing.htc");
+  @include box-sizing(border-box);
+  *behavior: url($jsdir + "/boxsizing.htc");
 }
 
-.lt-ie8 .unit {
+.lt-ie8 .unit{
   zoom: 1;
   width: 100%;
 }
@@ -820,6 +813,7 @@ table ol {
 }
 
 /* 汎用クラス */
+
 /*
 画像置換 (Alternative Image)
 高さはPadding-topかpadding-bottomdで設定する。
@@ -850,10 +844,10 @@ table ol {
   vertical-align: middle;
   cursor: pointer;
   background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(top, white, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
-  background-image: -o-linear-gradient(top, white, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
   background-repeat: repeat-x;
   border: 1px solid #bbbbbb;
@@ -861,13 +855,13 @@ table ol {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom-color: #a2a2a2;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .lt-ie7 .btn {
@@ -894,6 +888,7 @@ table ol {
   *background-color: #d9d9d9;
 }
 
+
 .ie8 .btn:active,
 .ie8 .btn.active {
   background-color: #cccccc;
@@ -904,9 +899,9 @@ table ol {
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
-  -moz-transition: background-position 0.1s linear;
-  -o-transition: background-position 0.1s linear;
-  transition: background-position 0.1s linear;
+     -moz-transition: background-position 0.1s linear;
+       -o-transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;
 }
 
 .btn:focus {
@@ -920,8 +915,8 @@ table ol {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .btn.disabled,
@@ -931,20 +926,22 @@ table ol {
   opacity: 0.65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
 }
 
 .chromeframe strong {
   color: #f00;
 }
 
+//////////////////////////////////////////////////////////
 /* カスタム設定 */
-.myclass {
-  margin: 0;
-}
+//////////////////////////////////////////////////////////
+
+@import "style";
 
 /* 上書きクラス */
+
 /* CLEARFIX */
 .lt-ie8 .clearfix,
 .lt-ie8 .cf {
@@ -1020,32 +1017,36 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 
 /* タブレットサイズ */
 @media (max-width: 720px) {
+
   .breakpoint-1 > .unit,
   .linearize-from-tablet > .unit {
     clear: both;
     display: block;
-    padding-left: 0;
+    padding-left: 0; 
     padding-right: 0;
     width: 100% !important;
   }
-
+  
   .show-breakpoint-1 {
     display: block !important;
   }
-
+  
   .hide-breakpoint-1 {
     display: none !important;
   }
+
 }
+
 /* モバイルサイズ */
 @media (max-width: 480px) {
+
   html {
     font-size: 0.875em;
     /* Mobileではデフォルトのテキストサイズを14pxに */
     -webkit-text-size-adjust: none;
     /* デバイスが横になった時の文字拡大をOFF */
   }
-
+  
   .breakpoint-2 > .unit,
   .linearize-from-motile > .unit {
     clear: both;
@@ -1054,15 +1055,15 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     padding-right: 0;
     width: 100% !important;
   }
-
+  
   .show-breakpoint-2 {
     display: block !important;
   }
-
+  
   .hide-breakpoint-2 {
     display: none !important;
   }
-
+  
   /* 画像 */
   img {
     max-width: 100%;
@@ -1073,10 +1074,14 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   table {
     overflow: auto;
   }
+
 }
+
 /*--- END MOBILE ---*/
+
 /* 印刷用 */
 @media print {
+
   /* テキストシャドウなど不要なエフェクトを無効化 */
   * {
     background: transparent;
@@ -1097,18 +1102,20 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-
+  
   /* 画像がはみ出したり変形したりしないように。 */
   img {
     max-width: 100%;
     height: auto;
   }
-
+  
   /* 画像置換をキャンセル */
   .alt-img {
     background-image: none !important;
     height: auto !important;
     padding: 0 !important;
   }
+
 }
+
 /*--- END PRINT ---*/
