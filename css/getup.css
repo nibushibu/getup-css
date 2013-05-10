@@ -276,10 +276,15 @@ button {
   cursor: pointer;
 }
 
-input,
+input[type="text"],
 select,
 textarea {
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   padding: 4px 6px;
   color: #555555;
   vertical-align: middle;
@@ -400,7 +405,6 @@ table ol {
 
 .lt-ie8 .unit {
   zoom: 1;
-  width: 100%;
 }
 
 .right-unit {
@@ -844,19 +848,24 @@ table ol {
 
 /* 汎用ボタン */
 .btn {
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   padding: 4px 12px;
   color: #333333;
   text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75) 0px 1px #aaaaaa;
   vertical-align: middle;
   cursor: pointer;
   background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(top, white, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
-  background-image: -o-linear-gradient(top, white, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
   background-repeat: repeat-x;
   border: 1px solid #bbbbbb;
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
@@ -864,9 +873,9 @@ table ol {
   border-bottom-color: #a2a2a2;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -905,10 +914,10 @@ table ol {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
-  -webkit-transition: background-position 0.1s linear;
-  -moz-transition: background-position 0.1s linear;
-  -o-transition: background-position 0.1s linear;
-  transition: background-position 0.1s linear;
+  -webkit-transition: background-position 0.1s linear, 1s;
+  -moz-transition: background-position 0.1s linear, 1s;
+  -o-transition: background-position 0.1s linear, 1s;
+  transition: background-position 0.1s linear, 1s;
 }
 
 .btn:focus {
@@ -930,8 +939,8 @@ table ol {
 .btn[disabled] {
   cursor: default;
   background-image: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
   opacity: 0.65;
-  filter: alpha(opacity=65);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -949,21 +958,14 @@ table ol {
 */
 /* 上書きクラス */
 /* CLEARFIX */
-.lt-ie8 .clearfix,
-.lt-ie8 .cf {
-  zoom: 1;
+.clearfix,
+.cf {
+  *zoom: 1;
 }
-
-.clearfix:before,
-.cf:before,
-.clearfix::after,
-.cf::after {
-  content: " ";
+.clearfix:after,
+.cf:after {
+  content: "";
   display: table;
-}
-
-.clearfix::after,
-.cf::after {
   clear: both;
 }
 
@@ -973,17 +975,17 @@ table ol {
 */
 .txtl,
 .alignleft {
-  text-align: left !important;
+  text-align: left;
 }
 
 .txtr,
 .alignright {
-  text-align: right !important;
+  text-align: right;
 }
 
 .txtc,
 .aligncenter {
-  text-align: center !important;
+  text-align: center;
 }
 
 /* フロート
@@ -991,26 +993,21 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 ※ .left / .right / .clear
 */
 .left {
+  display: inline;
   float: left;
   margin-top: 0;
 }
 
-.lt-ie8 .left {
-  display: inline;
-}
-
 .right {
+  display: inline;
   float: right;
   margin-top: 0;
-}
-
-.lt-ie8 .right {
-  display: inline;
 }
 
 .clear {
   clear: both;
   float: none;
+  display: block;
 }
 
 .hide {
@@ -1029,24 +1026,22 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     display: block;
     padding-left: 0;
     padding-right: 0;
-    width: 100% !important;
+    width: 100%;
   }
 
   .show-breakpoint-1 {
-    display: block !important;
+    display: block;
   }
 
   .hide-breakpoint-1 {
-    display: none !important;
+    display: none;
   }
 }
 /* モバイルサイズ */
 @media (max-width: 480px) {
   html {
     font-size: 0.875em;
-    /* Mobileではデフォルトのテキストサイズを14pxに */
     -webkit-text-size-adjust: none;
-    /* デバイスが横になった時の文字拡大をOFF */
   }
 
   .breakpoint-2 > .unit,
@@ -1055,15 +1050,15 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     display: block;
     padding-left: 0;
     padding-right: 0;
-    width: 100% !important;
+    width: 100%;
   }
 
   .show-breakpoint-2 {
-    display: block !important;
+    display: block;
   }
 
   .hide-breakpoint-2 {
-    display: none !important;
+    display: none;
   }
 
   /* 画像 */
@@ -1084,8 +1079,8 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   * {
     background: transparent;
     color: #000;
-    text-shadow: none !important;
-    box-shadow: none !important;
+    text-shadow: none;
+    box-shadow: none;
   }
 
   a,
@@ -1109,9 +1104,9 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 
   /* 画像置換をキャンセル */
   .alt-img {
-    background-image: none !important;
-    height: auto !important;
-    padding: 0 !important;
+    background-image: none;
+    height: auto;
+    padding: 0;
   }
 }
 /*--- END PRINT ---*/

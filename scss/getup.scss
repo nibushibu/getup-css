@@ -33,8 +33,7 @@ html {
   font-size: 81.25%;// →13px
   font-family: "Lucida Grande", Arial, sans-serif;
   line-height: 1.5;
-  // text-renderingプロパティ 参考:http://terkel.jp/archives/2012/09/text-rendering-optimizelegibility/
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;// text-renderingプロパティ 参考:http://terkel.jp/archives/2012/09/text-rendering-optimizelegibility/
 }
 
 ::-moz-selection {
@@ -285,10 +284,10 @@ button {
   cursor: pointer;
 }
 
-input,
+input[type="text"],
 select,
 textarea {
-  display: inline-block;
+  @include inline-block();
   padding: 4px 6px;
   color: #555555;
   vertical-align: middle;
@@ -310,10 +309,12 @@ textarea:focus {
   @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6));
 }
 
-.lt-ie9 input:focus,
-.lt-ie9 select:focus,
-.lt-ie9 textarea:focus {
-  outline: thin dotted;
+.lt-ie9 {
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: thin dotted;
+  }
 }
 
 select {
@@ -393,7 +394,6 @@ table ol {
 
 .lt-ie8 .unit{
   zoom: 1;
-  width: 100%;
 }
 
 .right-unit {
@@ -834,32 +834,22 @@ table ol {
 
 /* 汎用ボタン */
 .btn {
-  display: inline-block;
+  @include inline-block();
   padding: 4px 12px;
   color: #333333;
   text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  @include single-text-shadow(0 1px 1px rgba(255, 255, 255, 0.75));
   vertical-align: middle;
   cursor: pointer;
   background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  @include background-image(linear-gradient(top, #ffffff, #e6e6e6));
   background-repeat: repeat-x;
   border: 1px solid #bbbbbb;
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom-color: #a2a2a2;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05));
 }
 
 .lt-ie7 .btn {
@@ -896,10 +886,7 @@ table ol {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
-  -webkit-transition: background-position 0.1s linear;
-     -moz-transition: background-position 0.1s linear;
-       -o-transition: background-position 0.1s linear;
-          transition: background-position 0.1s linear;
+  @include single-transition(background-position 0.1s linear);
 }
 
 .btn:focus {
@@ -912,20 +899,15 @@ table ol {
 .btn:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  @include box-shadow(inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05));
 }
 
 .btn.disabled,
 .btn[disabled] {
   cursor: default;
   background-image: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
+  @include opacity(0.65);
+  @include box-shadow(none);
 }
 
 .chromeframe strong {
@@ -941,22 +923,9 @@ table ol {
 /* 上書きクラス */
 
 /* CLEARFIX */
-.lt-ie8 .clearfix,
-.lt-ie8 .cf {
-  zoom: 1;
-}
-
-.clearfix:before,
-.cf:before,
-.clearfix::after,
-.cf::after {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after,
-.cf::after {
-  clear: both;
+.clearfix,
+.cf {
+  @include pie-clearfix();
 }
 
 /* テキスト方向
@@ -965,17 +934,17 @@ table ol {
 */
 .txtl,
 .alignleft {
-  text-align: left !important;
+  text-align: left;
 }
 
 .txtr,
 .alignright {
-  text-align: right !important;
+  text-align: right;
 }
 
 .txtc,
 .aligncenter {
-  text-align: center !important;
+  text-align: center;
 }
 
 /* フロート
@@ -983,26 +952,18 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 ※ .left / .right / .clear
 */
 .left {
-  float: left;
+  @include float(left);
   margin-top: 0;
-}
-
-.lt-ie8 .left {
-  display: inline;
 }
 
 .right {
-  float: right;
+  @include float(right);
   margin-top: 0;
-}
-
-.lt-ie8 .right {
-  display: inline;
 }
 
 .clear {
   clear: both;
-  float: none;
+  @include reset-float();
 }
 
 .hide {
@@ -1022,15 +983,15 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     display: block;
     padding-left: 0; 
     padding-right: 0;
-    width: 100% !important;
+    width: 100%;
   }
   
   .show-breakpoint-1 {
-    display: block !important;
+    display: block;
   }
   
   .hide-breakpoint-1 {
-    display: none !important;
+    display: none;
   }
 
 }
@@ -1039,10 +1000,8 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 @media (max-width: 480px) {
 
   html {
-    font-size: 0.875em;
-    /* Mobileではデフォルトのテキストサイズを14pxに */
-    -webkit-text-size-adjust: none;
-    /* デバイスが横になった時の文字拡大をOFF */
+    font-size: 0.875em;//Mobileではデフォルトのテキストサイズを14pxに
+    -webkit-text-size-adjust: none;//デバイスが横になった時の文字拡大をOFF
   }
   
   .breakpoint-2 > .unit,
@@ -1051,15 +1010,15 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     display: block;
     padding-left: 0;
     padding-right: 0;
-    width: 100% !important;
+    width: 100%;
   }
   
   .show-breakpoint-2 {
-    display: block !important;
+    display: block;
   }
   
   .hide-breakpoint-2 {
-    display: none !important;
+    display: none;
   }
   
   /* 画像 */
@@ -1084,8 +1043,8 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   * {
     background: transparent;
     color: #000;
-    text-shadow: none !important;
-    box-shadow: none !important;
+    text-shadow: none;
+    box-shadow: none;
   }
 
   a,
@@ -1109,9 +1068,9 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   
   /* 画像置換をキャンセル */
   .alt-img {
-    background-image: none !important;
-    height: auto !important;
-    padding: 0 !important;
+    background-image: none;
+    height: auto;
+    padding: 0;
   }
 
 }
