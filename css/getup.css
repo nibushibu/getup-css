@@ -1044,6 +1044,13 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   .hide-breakpoint-1 {
     display: none;
   }
+
+  .has-gutter.breakpoint-1 {
+    margin-left: 0;
+  }
+  .has-gutter.breakpoint-1 .unit {
+    padding-left: 0;
+  }
 }
 /* モバイルサイズ */
 @media (max-width: 480px) {
@@ -1067,6 +1074,13 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 
   .hide-breakpoint-2 {
     display: none;
+  }
+
+  .has-gutter.breakpoint-2 {
+    margin-left: 0;
+  }
+  .has-gutter.breakpoint-2 .unit {
+    padding-left: 0;
   }
 
   /* 画像 */
