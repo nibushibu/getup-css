@@ -381,9 +381,17 @@ table ol {
   height: 0;
 }
 
+.has-gutter {
+  margin-left: -20px;
+}
+
 .unit{
   float: left;
   list-style: none;
+}
+
+.has-gutter > .unit{
+  padding-left: 20px;
 }
 
 .unit, .unit:after, .unit:before,
