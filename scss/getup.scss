@@ -27,6 +27,14 @@ https://github.com/nibushibu/getup-css/blob/master/LICENSE
 @import "compass";
 $jsdir: "/u/175530/getup-css/js";
 
+@mixin linearize-unit() {
+  clear: both;
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
 /* テキスト関連初期設定 */
 
 html {
@@ -987,11 +995,7 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 
   .breakpoint-1 > .unit,
   .linearize-from-tablet > .unit {
-    clear: both;
-    display: block;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
+    @include linearize-unit();
   }
 
   .show-breakpoint-1 {
@@ -1021,11 +1025,7 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 
   .breakpoint-2 > .unit,
   .linearize-from-motile > .unit {
-    clear: both;
-    display: block;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
+    @include linearize-unit();
   }
 
   .show-breakpoint-2 {
