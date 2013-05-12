@@ -48,7 +48,7 @@ html {
 
 /* タイポグラフィ */
 
-/* 見出し */ 
+/* 見出し */
 h1,
 h2,
 h3,
@@ -827,7 +827,7 @@ table ol {
 高さはPadding-topかpadding-bottomdで設定する。
 */
 .alt-img {
-  display: block;
+  @include inline-block();
   height: 0;
   overflow: hidden;
 }
@@ -989,15 +989,15 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   .linearize-from-tablet > .unit {
     clear: both;
     display: block;
-    padding-left: 0; 
+    padding-left: 0;
     padding-right: 0;
     width: 100%;
   }
-  
+
   .show-breakpoint-1 {
     display: block;
   }
-  
+
   .hide-breakpoint-1 {
     display: none;
   }
@@ -1018,7 +1018,7 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     font-size: 0.875em;//Mobileではデフォルトのテキストサイズを14pxに
     -webkit-text-size-adjust: none;//デバイスが横になった時の文字拡大をOFF
   }
-  
+
   .breakpoint-2 > .unit,
   .linearize-from-motile > .unit {
     clear: both;
@@ -1027,11 +1027,11 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     padding-right: 0;
     width: 100%;
   }
-  
+
   .show-breakpoint-2 {
     display: block;
   }
-  
+
   .hide-breakpoint-2 {
     display: none;
   }
@@ -1042,7 +1042,7 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
       padding-left: 0;
     }
   }
-  
+
   /* 画像 */
   img {
     max-width: 100%;
@@ -1055,8 +1055,6 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   }
 
 }
-
-/*--- END MOBILE ---*/
 
 /* 印刷用 */
 @media print {
@@ -1081,13 +1079,13 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  
+
   /* 画像がはみ出したり変形したりしないように。 */
   img {
     max-width: 100%;
     height: auto;
   }
-  
+
   /* 画像置換をキャンセル */
   .alt-img {
     background-image: none;
@@ -1096,5 +1094,3 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
   }
 
 }
-
-/*--- END PRINT ---*/

@@ -837,7 +837,12 @@ table ol {
 高さはPadding-topかpadding-bottomdで設定する。
 */
 .alt-img {
-  display: block;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   height: 0;
   overflow: hidden;
 }
@@ -1094,7 +1099,6 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     overflow: auto;
   }
 }
-/*--- END MOBILE ---*/
 /* 印刷用 */
 @media print {
   /* テキストシャドウなど不要なエフェクトを無効化 */
@@ -1131,4 +1135,3 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
     padding: 0;
   }
 }
-/*--- END PRINT ---*/
