@@ -963,6 +963,14 @@ table ol {
   color: #f00;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 /* カスタム設定 */
 /*
 
@@ -1020,14 +1028,6 @@ Wordpressのリッチテキストエディタが付加するクラス(※)を網
 .clear {
   clear: both;
   float: none;
-  display: block;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
   display: block;
 }
 
